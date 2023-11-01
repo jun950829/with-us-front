@@ -6,6 +6,9 @@ export default function HomePage() {
 }
 
 const Main = styled.div`
+  display: flex;
+  color: red;
+
   ${({ theme }) => theme.textSize.S64W700};
   ${({ theme }) => theme.gray.default};
 `;
