@@ -2,7 +2,7 @@ import { DefaultTheme, css } from 'styled-components';
 
 export const defaultTheme: DefaultTheme = {
   gray: {
-    default: '#F9E5BF',
+    default: '#000',
     gray10: '#2e2e2e',
     gray20: '#404040',
     gray30: '#595959',
@@ -14,7 +14,15 @@ export const defaultTheme: DefaultTheme = {
     gray90: '#f2f2f2'
   },
   palette: {
-    orange: '#FDB22D'
+    blue10: '#F1FBFE',
+    blue20: '#E0F6FD',
+    blue30: '#C0EDFB',
+    blue40: '#A1E4F9',
+    blue50: '#82DBF7',
+    blue60: '#65BEDA',
+    blue70: '#4C8FA4',
+    blue80: '#335F6D',
+    blue90: '#193037'
   },
   boxShadow: {
     shadow10: css`

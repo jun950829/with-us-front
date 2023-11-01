@@ -25,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   *{
+    color :${({ theme }) => theme.gray.gray10};
     box-sizing: border-box;
   }
 
