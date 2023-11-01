@@ -198,4 +198,8 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-mask-image: radial-gradient(white, black);
     mask-image: radial-gradient(white, black);
   }
+
+  div, p, span, a{
+    ${({ theme }) => theme.textSize.S14W400};
+  }
 `;
