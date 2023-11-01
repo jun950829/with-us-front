@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Providers from '@/styles/providers';
-import { Roboto } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import StyledComponentsRegistry from '@/styles/registry';
 import Nprogress from '@/src/components/commons/Nprogress';
-const roboto = Roboto({
+
+const jakarta = Plus_Jakarta_Sans({
   weight: '400',
   subsets: ['latin'],
   display: 'swap'
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <StyledComponentsRegistry>
       <Providers>
         <html lang="en">
-          <body className={roboto.className}>
+          <body className={jakarta.className}>
             <Nprogress />
             {children}
           </body>
