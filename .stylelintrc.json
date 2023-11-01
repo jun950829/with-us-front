@@ -1,0 +1,33 @@
+{
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
+  "extends": [
+    "stylelint-config-property-sort-order-smacss",
+    "stylelint-prettier",
+    "stylelint-config-standard",
+    "stylelint-config-styled-components",
+    "stylelint-processor-styled-components"
+
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "function-url-quotes": "never",
+    "property-no-vendor-prefix": null,
+    "max-line-length": null,
+    "selector-pseudo-class-no-unknown": null,
+    "no-descending-specificity": null,
+    "media-query-no-invalid":null,
+    "selector-class-pattern":null,
+    "value-no-vendor-prefix":null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["extends"]
+      }
+    ]
+  },
+  "customSyntax": "postcss-styled-syntax"
+}

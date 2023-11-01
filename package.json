@@ -6,19 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap",
+    "ts-prune": "ts-prune | grep -E -v '(used in module)|default'",
+    "lint:styled": "stylelint 'src/**/*.{ts,tsx}' --fix"
   },
   "dependencies": {
+    "next": "14.0.1",
+    "next-nprogress-bar": "^2.1.2",
+    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.1"
+    "styled-components": "^6.1.0",
+    "ts-prune": "^0.10.3"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.1"
+    "eslint-config-next": "14.0.1",
+    "postcss-styled-syntax": "^0.5.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-property-sort-order-smacss": "^9.1.0",
+    "stylelint-config-standard": "^34.0.0",
+    "typescript": "^5"
   }
 }
