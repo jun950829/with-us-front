@@ -1,8 +1,8 @@
 'use client';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
 export default function HomePage() {
-  return <Main>TEST</Main>;
+  return <Main></Main>;
 }
 
 const Main = styled.div`
