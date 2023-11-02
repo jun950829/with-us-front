@@ -12,6 +12,7 @@ declare module 'styled-components' {
       gray70: string;
       gray80: string;
       gray90: string;
+      gray100: string;
     };
     palette: {
       blue10: string;

@@ -11,7 +11,8 @@ export const defaultTheme: DefaultTheme = {
     gray60: '#a6a6a6',
     gray70: '#bfbfbf',
     gray80: '#d9d9d9',
-    gray90: '#f2f2f2'
+    gray90: '#f2f2f2',
+    gray100: '#ffffff'
   },
   palette: {
     blue10: '#F1FBFE',
