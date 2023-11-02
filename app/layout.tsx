@@ -3,6 +3,7 @@ import Providers from '@/styles/providers';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import StyledComponentsRegistry from '@/styles/registry';
 import Nprogress from '@/src/components/commons/Nprogress';
+import SideBar from '@/src/components/layout/SideBar';
 
 const jakarta = Plus_Jakarta_Sans({
   weight: '400',
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Providers>
         <html lang="en">
           <body className={jakarta.className}>
+            <SideBar />
             <Nprogress />
             {children}
           </body>
