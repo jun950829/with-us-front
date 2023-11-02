@@ -169,6 +169,6 @@ export const defaultTheme: DefaultTheme = {
     `
   },
   media: {
-    mobile: `screen and (max-width: 700px)`
+    mobile: `screen and (max-width: 767px)`
   }
 };
