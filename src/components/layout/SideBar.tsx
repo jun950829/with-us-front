@@ -82,14 +82,14 @@ const SideBarWrap = styled.div`
   gap: 16px;
   transition: max-width 0.3s;
 
-  ${({ theme }) => theme.boxShadow.shadow20}
+  ${({ theme }) => theme.boxShadow.shadow20};
+
   &:hover {
     max-width: 244px;
   }
 
   @media ${({ theme }) => theme.media.mobile} {
     width: 0;
-    transition: none;
   }
 `;
 
@@ -126,7 +126,6 @@ const ClanImage = styled.div`
   transition: all 0.3s;
   border: 1px solid orange;
   border-radius: 50%;
-  cursor: pointer;
 `;
 
 const ClanInfo = styled.div`
