@@ -78,13 +78,12 @@ const SideBarWrap = styled.nav`
   flex-direction: column;
   width: 100%;
   max-width: 84px;
-  height: 100vh;
+  height: calc(100% - 60px);
   padding-top: 8px;
   overflow: auto;
   transition: max-width 0.3s;
   border-right: 1px solid ${({ theme }) => theme.gray.gray90};
   background-color: #f9f9f9;
-  gap: 16px;
 
   &:hover {
     max-width: 244px;
@@ -98,7 +97,7 @@ const SideBarWrap = styled.nav`
 const MenuWrap = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 52px);
+  height: 100%;
   overflow: auto;
   gap: 8px;
 `;
