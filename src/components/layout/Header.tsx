@@ -57,6 +57,7 @@ const HeaderLayer = styled.div`
   position: relative;
   height: 80px;
   background-color: transparent;
+  z-index: 2;
 `;
 
 const HeaderWrap = styled.div`
