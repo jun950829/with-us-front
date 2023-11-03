@@ -60,13 +60,14 @@ const HeaderLayer = styled.div`
 `;
 
 const HeaderWrap = styled.div`
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 60px;
-  padding: 0px 10px;
+  padding: 0 10px;
+
   ${({ theme }) => theme.boxShadow.shadow20};
 `;
 
@@ -75,55 +76,55 @@ const Logo = styled.div`
 `;
 
 const MainMenus = styled.ul`
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 50px;
 
   li {
     position: relative;
-
-    ${({ theme }) => theme.textSize.S18W500};
     cursor: pointer;
+    ${({ theme }) => theme.textSize.S18W500};
 
-    &:after {
+    &::after {
+      content: '';
+      display: block;
       position: absolute;
       bottom: -10px;
-      display: block;
-      content: '';
       width: 100%;
-      border-bottom: solid 2px ${({ theme }) => theme.palette.blue80};
       transform: scaleX(0);
       transition: transform 250ms ease-in-out;
+      border-bottom: solid 2px ${({ theme }) => theme.palette.blue80};
     }
-    &:hover:after {
+
+    &:hover::after {
       transform: scaleX(1);
     }
   }
 `;
 
 const SubMenus = styled.ul`
+  display: flex;
   position: absolute;
-  width: 50%;
-  height: 20px;
+  z-index: 10;
   bottom: -20px;
   left: 50%;
-  transform: translateX(-50%);
-  display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: 60px;
-
-  z-index: 10;
-  background-color: ${({ theme }) => theme.palette.blue60};
+  justify-content: center;
+  width: 50%;
+  height: 20px;
+  transform: translateX(-50%);
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  background-color: ${({ theme }) => theme.palette.blue60};
+  gap: 60px;
 
   li {
     cursor: pointer;
+
     &:hover {
       color: ${({ theme }) => theme.gray.gray100};
     }
@@ -135,9 +136,9 @@ const InfoArea = styled.div``;
 const LoginBtn = styled.button`
   width: 100px;
   height: 50px;
-  text-align: center;
+  border-radius: 10px;
   background-color: ${({ theme }) => theme.palette.blue60};
   color: ${({ theme }) => theme.gray.gray100};
+  text-align: center;
   ${({ theme }) => theme.textSize.S16W700};
-  border-radius: 10px;
 `;
