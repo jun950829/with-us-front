@@ -72,7 +72,7 @@ export default function SideBar() {
 const SideBarWrap = styled.nav`
   display: flex;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   top: 60px;
   left: 0;
   flex-direction: column;
