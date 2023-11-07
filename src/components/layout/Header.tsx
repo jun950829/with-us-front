@@ -4,25 +4,43 @@ import styled from 'styled-components';
 
 const DummyMainMenus = [
   {
-    name: 'LOST ARK'
+    name: 'LOST ARK',
+    submenus: [
+      {
+        name: '파티찾기'
+      },
+      {
+        name: '게시판'
+      },
+      {
+        name: '기타'
+      }
+    ]
   },
   {
-    name: 'League Of Legends'
+    name: 'League Of Legends',
+    submenus: [
+      {
+        name: '파티찾기'
+      },
+      {
+        name: '게시판'
+      },
+      {
+        name: '기타'
+      }
+    ]
   },
   {
-    name: 'NOTICE'
-  }
-];
-
-const DummySubMenus = [
-  {
-    name: '파티찾기'
-  },
-  {
-    name: '게시판'
-  },
-  {
-    name: '기타'
+    name: 'NOTICE',
+    submenus: [
+      {
+        name: '게시판'
+      },
+      {
+        name: '기타'
+      }
+    ]
   }
 ];
 
@@ -36,14 +54,18 @@ export default function Header() {
 
         <MainMenus>
           {DummyMainMenus.map((menus, idx) => {
-            return <li key={idx}>{menus.name}</li>;
+            return (
+              <MainMenuBtn key={idx}>
+                {menus.name}
+                <SubMenus>
+                  {menus.submenus.map((menus, idx) => {
+                    return <SubMenusBtn key={idx}>{menus.name}</SubMenusBtn>;
+                  })}
+                </SubMenus>
+              </MainMenuBtn>
+            );
           })}
         </MainMenus>
-        <SubMenus>
-          {DummySubMenus.map((menus, idx) => {
-            return <li key={idx}>{menus.name}</li>;
-          })}
-        </SubMenus>
 
         <InfoArea>
           <LoginBtn>로그인하기</LoginBtn>
@@ -55,7 +77,7 @@ export default function Header() {
 
 const HeaderLayer = styled.div`
   position: relative;
-  height: 80px;
+  height: 60px;
   background-color: transparent;
 `;
 
@@ -80,38 +102,50 @@ const MainMenus = styled.ul`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 60px;
+
   gap: 50px;
+`;
 
-  li {
-    position: relative;
+const MainMenuBtn = styled.li`
+  display: flex;
+  align-items: center;
+  height: 60px;
+  line-height: 60px;
 
-    ${({ theme }) => theme.textSize.S18W500};
-    cursor: pointer;
+  ${({ theme }) => theme.textSize.S18W500};
+  cursor: pointer;
+  position: relative;
 
-    &:after {
-      position: absolute;
-      bottom: -10px;
-      display: block;
-      content: '';
-      width: 100%;
-      border-bottom: solid 2px ${({ theme }) => theme.palette.blue80};
-      transform: scaleX(0);
-      transition: transform 250ms ease-in-out;
-    }
-    &:hover:after {
-      transform: scaleX(1);
+  &:after {
+    position: absolute;
+    bottom: 10px;
+    display: block;
+    content: '';
+    width: 100%;
+    border-bottom: solid 2px ${({ theme }) => theme.palette.blue80};
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  &:hover:after {
+    transform: scaleX(1);
+  }
+
+  &:hover {
+    > div {
+      display: flex;
     }
   }
 `;
 
-const SubMenus = styled.ul`
+const SubMenus = styled.div`
+  display: none;
   position: absolute;
-  width: 50%;
+  width: 500px;
   height: 20px;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -121,12 +155,12 @@ const SubMenus = styled.ul`
   background-color: ${({ theme }) => theme.palette.blue60};
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+`;
 
-  li {
-    cursor: pointer;
-    &:hover {
-      color: ${({ theme }) => theme.gray.gray100};
-    }
+const SubMenusBtn = styled.div`
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.gray.gray100};
   }
 `;
 
