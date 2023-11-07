@@ -170,6 +170,7 @@ export const defaultTheme: DefaultTheme = {
     `
   },
   media: {
+    pc: `screen and (min-width: 1280px)`,
     mobile: `screen and (max-width: 767px)`
   }
 };

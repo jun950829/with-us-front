@@ -56,6 +56,7 @@ declare module 'styled-components' {
       S64W700: SerializedStyles;
     };
     media: {
+      pc: string;
       mobile: string;
     };
   }
