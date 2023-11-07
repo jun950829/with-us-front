@@ -79,7 +79,7 @@ const HeaderLayer = styled.div`
   position: relative;
   height: 60px;
   background-color: transparent;
-  z-index: 2;
+  z-index: 10;
 `;
 
 const HeaderWrap = styled.div`
@@ -151,11 +151,10 @@ const SubMenus = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 50%;
-  height: 20px;
-  transform: translateX(-50%);
+  background-color: ${({ theme }) => theme.palette.blue60};
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  gap: 50px;
 `;
 
 const SubMenusBtn = styled.div`
