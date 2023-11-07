@@ -79,16 +79,18 @@ const HeaderLayer = styled.div`
   position: relative;
   height: 60px;
   background-color: transparent;
+  z-index: 2;
 `;
 
 const HeaderWrap = styled.div`
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 60px;
-  padding: 0px 10px;
+  padding: 0 10px;
+
   ${({ theme }) => theme.boxShadow.shadow20};
 `;
 
@@ -97,13 +99,13 @@ const Logo = styled.div`
 `;
 
 const MainMenus = styled.ul`
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   height: 60px;
 
+  justify-content: center;
   gap: 50px;
 `;
 
@@ -147,12 +149,11 @@ const SubMenus = styled.div`
   left: 50%;
   transform: translateX(-50%);
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  gap: 60px;
-
-  z-index: 10;
-  background-color: ${({ theme }) => theme.palette.blue60};
+  justify-content: center;
+  width: 50%;
+  height: 20px;
+  transform: translateX(-50%);
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
 `;
@@ -169,9 +170,9 @@ const InfoArea = styled.div``;
 const LoginBtn = styled.button`
   width: 100px;
   height: 50px;
-  text-align: center;
+  border-radius: 10px;
   background-color: ${({ theme }) => theme.palette.blue60};
   color: ${({ theme }) => theme.gray.gray100};
+  text-align: center;
   ${({ theme }) => theme.textSize.S16W700};
-  border-radius: 10px;
 `;

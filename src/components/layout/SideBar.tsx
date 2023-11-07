@@ -69,20 +69,21 @@ export default function SideBar() {
   );
 }
 
-const SideBarWrap = styled.div`
+const SideBarWrap = styled.nav`
   display: flex;
   position: absolute;
+  z-index: 1;
+  top: 60px;
   left: 0;
   flex-direction: column;
   width: 100%;
   max-width: 84px;
-  height: 100vh;
+  height: calc(100% - 60px);
   padding-top: 8px;
   overflow: auto;
-  gap: 16px;
   transition: max-width 0.3s;
-
-  ${({ theme }) => theme.boxShadow.shadow20};
+  border-right: 1px solid ${({ theme }) => theme.gray.gray90};
+  background-color: #f9f9f9;
 
   &:hover {
     max-width: 244px;
@@ -96,7 +97,7 @@ const SideBarWrap = styled.div`
 const MenuWrap = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 52px);
+  height: 100%;
   overflow: auto;
   gap: 8px;
 `;
@@ -106,7 +107,7 @@ const Menu = styled.div`
   flex-direction: column;
   width: 100%;
   transition: all 0.3s;
-  border-bottom: 1px solid ${({ theme }) => theme.gray.gray60};
+  border-bottom: 1px solid ${({ theme }) => theme.gray.gray80};
 `;
 
 const MenuItemList = styled.div`
@@ -121,8 +122,8 @@ const MenuName = styled.div`
 `;
 
 const ClanImage = styled.div`
-  min-width: 36px;
-  min-height: 36px;
+  min-width: 34px;
+  min-height: 34px;
   transition: all 0.3s;
   border: 1px solid orange;
   border-radius: 50%;
