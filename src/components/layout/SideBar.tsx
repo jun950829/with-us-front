@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Dummy = [
@@ -33,7 +34,11 @@ export default function SideBar() {
           <MenuName>MENUES</MenuName>
           <MenuItemList>
             {Dummy.map((clan, i) => (
-              <ClanInfo key={i}>
+              <ClanInfo
+                key={i}
+                href={`/clan/${clan.name}`}
+                aria-label={`${clan.name} 클랜으로 이동`}
+              >
                 <ClanImage></ClanImage>
                 <ClanName>{clan.name}</ClanName>
               </ClanInfo>
@@ -44,7 +49,11 @@ export default function SideBar() {
           <MenuName>CLANS</MenuName>
           <MenuItemList>
             {Dummy.map((clan, i) => (
-              <ClanInfo key={i}>
+              <ClanInfo
+                key={i}
+                href={`/clan/${clan.name}`}
+                aria-label={`${clan.name} 클랜으로 이동`}
+              >
                 <ClanImage></ClanImage>
                 <ClanName>{clan.name}</ClanName>
               </ClanInfo>
@@ -129,7 +138,7 @@ const ClanImage = styled.div`
   border-radius: 50%;
 `;
 
-const ClanInfo = styled.div`
+const ClanInfo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 16px;

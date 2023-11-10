@@ -47,6 +47,9 @@ declare module 'styled-components' {
       S20W400: SerializedStyles;
       S20W500: SerializedStyles;
       S20W700: SerializedStyles;
+      S24W400: SerializedStyles;
+      S24W500: SerializedStyles;
+      S24W700: SerializedStyles;
       S28W400: SerializedStyles;
       S28W500: SerializedStyles;
       S28W700: SerializedStyles;
