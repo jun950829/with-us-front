@@ -45,6 +45,14 @@ const ListWrap = styled.ul`
   width: 100%;
 `;
 
+const Thumbnail = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  border-radius: 12px;
+`;
+
 const ListItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -54,14 +62,23 @@ const ListItem = styled.li`
   border-radius: 12px;
 
   ${({ theme }) => theme.boxShadow.shadow20}
-`;
 
-const Thumbnail = styled.div`
-  position: relative;
-  width: 100%;
-  height: 50%;
-  overflow: hidden;
-  border-radius: 12px;
+  :hover {
+    transition: all 0.5s;
+    ${Thumbnail} {
+      img {
+        scale: 1.1;
+      }
+    }
+  }
+
+  img:not(:hover) {
+    transition: 0.5s ease-out;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
 `;
 
 const ItemTitle = styled.h4`
