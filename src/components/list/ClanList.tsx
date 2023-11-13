@@ -12,6 +12,7 @@ export default function ClanList() {
         {new Array(8).fill(8).map((__, index) => (
           <ListItem key={index}>
             <CustomLink
+              title={`Fundamental of javascript`}
               href={`/find/clan/${index}`}
               aria-label={`클랜 찾기 제목 : Fundamental of javascript로 이동`}
             >
