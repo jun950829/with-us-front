@@ -66,7 +66,6 @@ export default function Header() {
             );
           })}
         </MainMenus>
-
         <InfoArea>
           <LoginBtn>로그인하기</LoginBtn>
         </InfoArea>
@@ -75,11 +74,13 @@ export default function Header() {
   );
 }
 
-const HeaderLayer = styled.div`
-  position: relative;
-  height: 60px;
-  background-color: transparent;
+const HeaderLayer = styled.header`
+  position: sticky;
+  width: 100%;
+  top: 0px;
   z-index: 10;
+  height: 60px;
+  background-color: white;
 `;
 
 const HeaderWrap = styled.div`
@@ -103,9 +104,8 @@ const MainMenus = styled.ul`
   position: relative;
   flex-direction: row;
   align-items: center;
-  height: 60px;
-
   justify-content: center;
+  height: 60px;
   gap: 50px;
 `;
 
@@ -114,22 +114,22 @@ const MainMenuBtn = styled.li`
   align-items: center;
   height: 60px;
   line-height: 60px;
-
   ${({ theme }) => theme.textSize.S18W500};
   cursor: pointer;
   position: relative;
 
-  &:after {
+  &::after {
+    content: '';
+    display: block;
     position: absolute;
     bottom: 10px;
-    display: block;
-    content: '';
     width: 100%;
-    border-bottom: solid 2px ${({ theme }) => theme.palette.blue80};
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
+    border-bottom: solid 2px ${({ theme }) => theme.palette.blue80};
   }
-  &:hover:after {
+
+  &:hover::after {
     transform: scaleX(1);
   }
 
@@ -143,22 +143,23 @@ const MainMenuBtn = styled.li`
 const SubMenus = styled.div`
   display: none;
   position: absolute;
-  width: 500px;
-  height: 20px;
   bottom: -20px;
   left: 50%;
-  transform: translateX(-50%);
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.palette.blue60};
+  width: 500px;
+  height: 20px;
+  transform: translateX(-50%);
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
+  background-color: ${({ theme }) => theme.palette.blue60};
   gap: 50px;
 `;
 
 const SubMenusBtn = styled.div`
   cursor: pointer;
+
   &:hover {
     color: ${({ theme }) => theme.gray.gray100};
   }

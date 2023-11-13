@@ -80,7 +80,7 @@ export default function SideBar() {
 
 const SideBarWrap = styled.nav`
   display: flex;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 60px;
   left: 0;
@@ -91,10 +91,11 @@ const SideBarWrap = styled.nav`
   padding-top: 8px;
   overflow: auto;
   transition: max-width 0.3s;
-  border-right: 1px solid ${({ theme }) => theme.gray.gray90};
   background-color: #f9f9f9;
 
+  ${({ theme }) => theme.boxShadow.shadow20};
   &:hover {
+    border-right: 1px solid ${({ theme }) => theme.gray.gray90};
     max-width: 244px;
   }
 

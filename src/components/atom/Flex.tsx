@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 interface StyleProps {
-  flexDirection?: 'column' | 'row';
+  direction?: 'column' | 'row';
   justifyContents?:
     | 'flex-start'
     | 'flex-end'
@@ -15,9 +15,10 @@ interface StyleProps {
 
 const DefaultValue = css<StyleProps>`
   display: flex;
-  flex-direction: ${({ flexDirection }) => (flexDirection ? flexDirection : 'row')};
-  justify-content: ${({ justifyContents }) => justifyContents || 'flex-start'};
+  flex-direction: ${({ direction }) => (direction ? direction : 'row')};
   align-items: ${({ alignItems }) => alignItems || 'flex-start'};
+  justify-content: ${({ justifyContents }) => justifyContents || 'flex-start'};
+  width: 100%;
   margin: ${({ margin }) => margin};
   padding: ${({ padding }) => padding};
 `;

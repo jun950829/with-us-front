@@ -10,17 +10,18 @@ export default function Center({ children }: { children: React.ReactNode }) {
 }
 
 const Container = styled.div`
-  padding-left: 83px;
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
+  padding-left: 83px;
+
   @media ${({ theme }) => theme.media.mobile} {
-    padding-left: 0px;
+    padding-left: 0;
   }
 `;
 
 const CenterLayer = styled.div`
-  max-width: 1280px;
   width: 100%;
+  max-width: 1280px;
   margin: 0 16px;
 `;
