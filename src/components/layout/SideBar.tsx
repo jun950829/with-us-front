@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const Dummy = [
@@ -33,7 +34,11 @@ export default function SideBar() {
           <MenuName>MENUES</MenuName>
           <MenuItemList>
             {Dummy.map((clan, i) => (
-              <ClanInfo key={i}>
+              <ClanInfo
+                key={i}
+                href={`/clan/${clan.name}`}
+                aria-label={`${clan.name} 클랜으로 이동`}
+              >
                 <ClanImage></ClanImage>
                 <ClanName>{clan.name}</ClanName>
               </ClanInfo>
@@ -44,7 +49,11 @@ export default function SideBar() {
           <MenuName>CLANS</MenuName>
           <MenuItemList>
             {Dummy.map((clan, i) => (
-              <ClanInfo key={i}>
+              <ClanInfo
+                key={i}
+                href={`/clan/${clan.name}`}
+                aria-label={`${clan.name} 클랜으로 이동`}
+              >
                 <ClanImage></ClanImage>
                 <ClanName>{clan.name}</ClanName>
               </ClanInfo>
@@ -71,7 +80,7 @@ export default function SideBar() {
 
 const SideBarWrap = styled.nav`
   display: flex;
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 60px;
   left: 0;
@@ -82,10 +91,11 @@ const SideBarWrap = styled.nav`
   padding-top: 8px;
   overflow: auto;
   transition: max-width 0.3s;
-  border-right: 1px solid ${({ theme }) => theme.gray.gray90};
   background-color: #f9f9f9;
 
+  ${({ theme }) => theme.boxShadow.shadow20};
   &:hover {
+    border-right: 1px solid ${({ theme }) => theme.gray.gray90};
     max-width: 244px;
   }
 
@@ -129,7 +139,7 @@ const ClanImage = styled.div`
   border-radius: 50%;
 `;
 
-const ClanInfo = styled.div`
+const ClanInfo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 16px;

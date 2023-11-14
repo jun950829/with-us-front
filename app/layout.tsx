@@ -13,6 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap'
 });
+
 export const metadata: Metadata = {
   title: 'With Us',
   description: '게임 친구 찾기'

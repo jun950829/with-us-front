@@ -129,7 +129,23 @@ export const defaultTheme: DefaultTheme = {
       font-size: 2rem;
       line-height: 140%;
     `,
+    S24W400: css`
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 160%;
+    `,
 
+    S24W500: css`
+      font-weight: 500;
+      font-size: 2.4rem;
+      line-height: 160%;
+    `,
+
+    S24W700: css`
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 160%;
+    `,
     S28W400: css`
       font-weight: 400;
       font-size: 2.8rem;
