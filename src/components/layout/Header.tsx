@@ -7,13 +7,13 @@ const DummyMainMenus = [
     name: 'LOST ARK',
     submenus: [
       {
-        name: '파티찾기'
+        name: '클랜 보기'
+      },
+      {
+        name: '클랜원 모집'
       },
       {
         name: '게시판'
-      },
-      {
-        name: '기타'
       }
     ]
   },

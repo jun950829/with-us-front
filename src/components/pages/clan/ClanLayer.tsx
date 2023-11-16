@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 export default function ClanLayer(prop: { clanData: any }) {
   //클랜 데이터 매핑
+  console.log(prop.clanData);
 
   return (
     <ClanLayerWrap>
