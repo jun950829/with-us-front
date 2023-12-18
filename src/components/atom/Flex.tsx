@@ -9,8 +9,8 @@ interface StyleProps {
     | 'space-around'
     | 'space-evenly';
   alignItems?: 'flex-start' | 'flex-end' | 'center';
-  margin?: string;
-  padding?: string;
+  $margin?: string;
+  $padding?: string;
 }
 
 const DefaultValue = css<StyleProps>`
@@ -19,8 +19,8 @@ const DefaultValue = css<StyleProps>`
   align-items: ${({ alignItems }) => alignItems || 'flex-start'};
   justify-content: ${({ justifyContents }) => justifyContents || 'flex-start'};
   width: 100%;
-  margin: ${({ margin }) => margin};
-  padding: ${({ padding }) => padding};
+  margin: ${({ $margin }) => $margin};
+  padding: ${({ $padding }) => $padding};
 `;
 
 const Main = styled.main<StyleProps>`

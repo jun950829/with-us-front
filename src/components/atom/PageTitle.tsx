@@ -1,11 +1,7 @@
+import { PageTitle } from '@/src/types';
 import styled from 'styled-components';
 
-interface Props {
-  title: string;
-  margin?: string;
-}
-
-export default function PageTitle({ title, margin = '24px auto' }: Props) {
+export default function PageTitle({ title, margin = '24px auto' }: PageTitle) {
   return <Title $margin={margin}>{title}</Title>;
 }
 
