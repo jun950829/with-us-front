@@ -1,10 +1,7 @@
 import styled from 'styled-components';
+import { ListTitle } from '@/src/types';
 
-interface Props {
-  title: string;
-}
-
-export default function ListTitle({ title }: Props) {
+export default function ListTitle({ title }: ListTitle) {
   return (
     <Title>
       {title}

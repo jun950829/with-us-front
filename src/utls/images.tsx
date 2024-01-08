@@ -29,7 +29,7 @@ export default function Images({
       priority={priority}
       src={`${src}`}
       alt={alt}
-      quality={1}
+      quality={50}
       loading={loading}
       width={width}
       fill={!width && !height ? true : false}
@@ -37,7 +37,7 @@ export default function Images({
       onClick={onClick}
       style={{ ...style, objectFit: 'cover' }}
       className={className}
-      sizes="10vw"
+      sizes="50vw"
     />
   );
 }
