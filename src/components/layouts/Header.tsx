@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 const DummyMainMenus = [
@@ -67,7 +68,9 @@ export default function Header() {
           })}
         </MainMenus>
         <InfoArea>
-          <LoginBtn>로그인하기</LoginBtn>
+          <LoginBtn href={`/login`} aria-label={`로그인 페이지로 이동`}>
+            로그인하기
+          </LoginBtn>
         </InfoArea>
       </HeaderWrap>
     </HeaderLayer>
@@ -167,12 +170,19 @@ const SubMenusBtn = styled.div`
 
 const InfoArea = styled.div``;
 
-const LoginBtn = styled.button`
+const LoginBtn = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100px;
   height: 50px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.palette.blue60};
-  color: ${({ theme }) => theme.gray.gray100};
-  text-align: center;
-  ${({ theme }) => theme.textSize.S16W700};
+  color: ${({ theme }) => theme.gray.gray80};
+  ${({ theme }) => theme.textSize.S16W500};
+
+  &:hover {
+    color: ${({ theme }) => theme.gray.gray100};
+  }
 `;
